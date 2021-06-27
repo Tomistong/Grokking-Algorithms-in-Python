@@ -13,11 +13,11 @@
   {'a': 1, 'b': 2, 'c': 3}
   ```
 
-The **hash function** is used to map the values to their address in the data structure. Therefore, we can use that same function to find the value by computing the address with the function when we need to run a search.
+  The **hash function** is used to map the values to their address in the data structure. Therefore, we can use that same function to find the value by computing the address with the function when we need to run a search.
 
-**Hash tables** are useful for when you need to map one thing to another thing or look something up.
+  **Hash tables** are useful for when you need to map one thing to another thing or look something up.
 
-You can't have duplicate keys in a hash table since it would break the hash table. This is called a **collision** and is not allowed in hash tables.
+  You can't have duplicate keys in a hash table since it would break the hash table. This is called a **collision** and is not allowed in hash tables.
 
 * `Hash functions`: a special type of function that takes a string (or any data type) as an input and outputs a number. When used with a **hash table**, however, it points to the address of that string (key). Therefore, a **hash function** maps strings to numbers.
 
@@ -27,6 +27,6 @@ You can't have duplicate keys in a hash table since it would break the hash tabl
 
 * `Collisions`: when two different keys are mapped by the **hash function** to the same address in the **hash table**
 
-**Collisions** can be avoided by, for example, using the first letter of the key to categorize the keys across 26 slots where each slot is made up of a linked list of the full key to it's corresponding value.
+  **Collisions** can be avoided by, for example, using the first letter of the key to categorize the keys across 26 slots where each slot is made up of a linked list of the full key to it's corresponding value.
 
-Ideally, the **hash function** evenly maps all keys over the **hash table**. Using a linked list in a shared slot on the **hash table** is one way to avoid **collisions**, but is no substitute for a good **hash function**.
+  Ideally, the **hash function** evenly maps all keys over the **hash table**. Using a linked list in a shared slot on the **hash table** is one way to avoid **collisions**, but is no substitute for a good **hash function**.
