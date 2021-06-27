@@ -13,6 +13,11 @@ def check_voter(name):
 cache = {}
 
 def get_page(url):
+    
+    def get_data_from_server(url):
+        # do stuff
+        pass
+    
     if cache.get(url):
         return cache[url]
     else:
