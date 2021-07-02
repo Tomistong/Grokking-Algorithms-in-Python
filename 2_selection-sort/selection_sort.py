@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 def find_smallest(arr):
     """Return the address of the smallest element in an array.
 

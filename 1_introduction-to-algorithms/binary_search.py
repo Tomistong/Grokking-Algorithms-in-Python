@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 def binary_search(l:list, item):
     """Perform binary search on a homogenous list for an item and return it's 
     location.
