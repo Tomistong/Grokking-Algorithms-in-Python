@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 def simple_search(l:list, item):
     """Perform simple search on a homogenous list for an item and return it's 
     location.
