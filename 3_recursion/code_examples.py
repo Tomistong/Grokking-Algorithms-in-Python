@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 
-
 def look_for_key(main_box):
     """Non-recursive code example."""
     pile = main_box.make_a_pile_to_look_through()

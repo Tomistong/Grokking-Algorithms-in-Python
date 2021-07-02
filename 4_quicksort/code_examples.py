@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 def recursive_array_addition(l:list):
     """Sum an array of integers using recursion."""
     if len(l) == 0:
