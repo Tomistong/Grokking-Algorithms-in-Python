@@ -92,4 +92,63 @@ In this example, we simply added all the elements together. However, when couple
 
 ### [Bloom filters](https://en.wikipedia.org/wiki/Bloom_filter)
 
-### HyperLogLog
+A space-efficient *probabilistic data structure* used to test whether an element is a memeber of a set. False positives are possible, but false negatives are not.
+
+The advantage of a **bloom filter** is the limited amount of memory it occupies, when compared to a **hash table**, because a **bloom filter** doesn't store every item to the set. Although, items cannot be removed from the set once added.
+
+### [HyperLogLog](https://en.wikipedia.org/wiki/HyperLogLog)
+
+The **HyperLogLog** algorithm approximates the number of distinct elements in a *multiset*.
+
+* [`Multiset`](https://en.wikipedia.org/wiki/Multiset): a set that allows for multiple instances for each of its elements.
+
+Similar to the **bloom filter**, the **HyperLogLog** algorithm *approximates* the answer, and comes very close to the real answer without needing to spend the time to calculate the real answer.
+
+For instances where the data set that is being estimated is large, things like **HyperLogLog** and **bloom filters** make sense.
+
+### [SHA algorithms](https://en.wikipedia.org/wiki/Secure_Hash_Algorithms)
+
+Recall the concept of a *hashing* from [chapter 5](../5_hash-tables/README.md). A **hash function** is used to store a value in an array with a *key* which we use to retrieve the value we just stored. A **hash table** allows us to perform `search`, `insert`, and `delete` in constant time (`O(1)` time). Beyond this, we need to ensure that the **hash function** provides us with a good distribution or else our hash table will not perform well when we need to operate on it.
+
+#### SHA
+
+Specifically, there are **hash functions** called **secure hash algorithm (SHA)** functions. The **SHA** algorithm generates a *hash* for a given string, as opposed to a **hash function** for a **hash table** which generates an *array index*.
+
+As a consequence to how the **SHA** function generates values for a given string, we can use this to test whether two files are the same. Just input the contents of the files into the function and check to see if the resulting *hashes* are equivalent.
+
+Additionally, this is one way to check if a password entered by a user matches what is stored in the user database.
+
+However, the **SHA** function only goes *one way*: you can get the *hash* of a string, but you can't get the *string* of a hash.
+
+There are multiple algorithms in the **SHA** family:
+
+* `SHA-0`
+* `SHA-1`
+* `SHA-2`
+* `SHA-3`
+
+For password hashing, it's generally recommended to use `SHA-2` or `SHA-3`, since vulnerabilities have been identified in `SHA-0` and `SHA-1`. However, according to this book, the "gold standard" of password hashing is a **hash function** called [`bcrypt`](https://en.wikipedia.org/wiki/Bcrypt).
+
+**SHA** functions are *locality insensitive*, meaning changing a single character produces a ***completely*** different *hash*. In the case that this isn't a desirable feature, one can use something called Simhash**.
+
+### [Simhash](https://en.wikipedia.org/wiki/SimHash)
+
+**Simhash** is an algorithm for quickly estimating the similarity of two sets.
+
+This hash algorithm is used to identify duplicate web pages by the Google web crawlers. It can also be used to determine if an essay has been plagiarized. By extension, it can be used to detect potentially copyrighted content.
+
+### [Diffie-Hellman key exchange (DH)](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)
+
+The **Diffie-Hellman key exchange** is a method of securely exchanging cryptographic keys over a public channel (i.e. the internet).
+
+This method encrypts a message with a cipher that is difficult to decode without requiring both parties to know the cipher. It achieves this by generating a *public* and *private* key. The *public* key does not have to be hidden or kept secret - anyone that wants to send you a message uses this *public* key to encrypt their messaage. Then, you (and only you) can decrypt it with your *private* key.
+
+The **DH** method has been succeeded by [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)).
+
+### [Linear programming (LP)](https://en.wikipedia.org/wiki/Linear_programming)
+
+**Linear programming**, or linear optimization, is a method used to reach the best result, given some constraints.
+
+The optimization problem regarding equally dividing our farmland in [chapter 4](../4_quicksort/README.md) is an example of a problem that could be solved using **linear programming**.
+
+The concept of optimization uses an algorithm called the [**simplex algorithm**](https://en.wikipedia.org/wiki/Simplex_algorithm).
